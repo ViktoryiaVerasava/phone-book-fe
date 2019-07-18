@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Phone Book App</a>
+</nav>
+<p class="app-sync-alert">
+  <ngb-alert [type]="alertType"
+            *ngIf="isAlertMessageShown"
+            (close)="closeAlert()">
+    {{alertMessage}}
+  </ngb-alert>
+</p>
+<div class="app-sync-form">
+  <input #fileInput
+          class="app-sync-form__input"
+          type="file"
+          (change)="onFileInputChange(fileInput)"/>
+  <button class="btn btn-outline-primary float-right app-sync-form__btn"
+          [ngClass]="{'disabled': isUploadDisabled}"
+          (click)="uploadPhoneBookData()">Upload PhoneBook</button>
+  <button class="btn btn-outline-primary float-right app-sync-form__btn"
+          (click)="downloadPhoneBookData()">Download PhoneBook</button>
+</div>
+<div class="container-fluid pb-5">
+  <app-contact-list></app-contact-list>
+</div>
+
+

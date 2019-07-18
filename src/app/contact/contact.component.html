@@ -1,0 +1,23 @@
+<div class="card card-default" id="card_contacts">
+  <ul class="list-group pull-down" id="contact-list">
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
+          <span class="fa fa-mobile fa-fw text-success float-right pulse"></span>
+          <label class="name lead">{{phoneBookRecord.personName}}</label>
+          <br>
+          <span class="fa fa-mobile fa-fw text-success"></span>
+          <span class="text-muted">{{phoneBookRecord.phoneNumber}}</span>
+        </div>
+        <div class="list-group-item__btn-group">
+            <div class="list-group-item__btn-group-remove"
+                (click)="removePhoneBookRecord()">
+              <span>X</span>
+            </div>
+            <button class="btn btn-outline-primary float-right"
+                    (click)="updatePhoneBookRecord()">Update Record</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

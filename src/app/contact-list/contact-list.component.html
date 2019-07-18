@@ -1,0 +1,37 @@
+<div>
+  <p>
+    <ngb-alert [type]="alertType"
+              *ngIf="showMessage"
+              (close)="closeAlert()">
+      {{message}}
+    </ngb-alert>
+  </p>
+  <div class="col-12">
+    <form [formGroup]="searchForm" (ngSubmit)="searchPhoneBookRecords()" class="row">
+      <div class="col-lg-5 col-sm-3 col-md-4">
+        <input for="searchParam"
+              formControlName="searchParam"
+              type="search"
+              name="query"
+              class="form-control"
+              (keyup)="searchPhoneBookRecords()"
+              placeholder="Search">
+      </div>
+      <div class="col-lg-3 col-sm-2 col-md-3">
+        <button class="btn btn-outline-primary"
+                (click)="searchPhoneBookRecords()">Search</button>
+      </div>
+      <div class="col-lg-4 col-sm-2 col-md-3">
+        <button class="btn btn-outline-primary float-right"
+                (click)="openFormModal()">Add Record</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="container-fluid">
+  <app-contact class="col-12"
+              *ngFor="let record of phoneBookRecords;trackBy:record?.id"
+              [phoneBookRecord]="record"
+              (updateRecord)="onUpdateRecord($event)"
+              (removeRecord)="onRemoveRecord($event)"></app-contact>
+</div>

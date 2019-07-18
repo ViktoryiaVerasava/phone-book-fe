@@ -1,0 +1,28 @@
+.app-sync {
+  &-form {
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px;
+
+    &__btn {
+      margin: 0px 5px;
+    }
+
+    &__input {
+      margin: 0px 5px;
+      color: #afaeae;
+      cursor: pointer;
+      user-select: none;
+      background-color: #ececec;
+      border: 1px solid #afaeae;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 0.25rem;
+    }
+  }
+
+  &-alert {
+    margin: 15px;
+  }
+}
